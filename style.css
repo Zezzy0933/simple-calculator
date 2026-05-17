@@ -1,0 +1,133 @@
+:root {
+  --bg: #0a0a0a;
+  --panel: #1a1a1a;
+  --button: #2a2a2a;
+  --button-hover: #c77070;
+  --accent: #b43560;
+  --text: #ffffff;
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+.kalkulator {
+  background-color: var(--panel);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s ease;
+}
+.obudowa {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  height: auto;
+  background-color: var(--panel);
+  border-radius: 10px;
+  transition: all 0.6s ease;
+}
+.przyciski {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #111522;;
+  padding: 2.5rem;
+  border-radius: 16px;
+  transition: all 0.6s ease;
+}
+.przyciski button:last-child {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  height: 5rem;
+}
+.przyciski button {
+  cursor: pointer;
+  background-color: var(--button);
+  color: var(--text);
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  transition: background-color 0.3s ease;
+}
+
+.przyciski button:hover {
+  background-color: var(--button-hover);
+}
+#wynik {
+  background-color: var(--accent);
+  width: 100%;
+  height: 5rem;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 1rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .kalkulator {
+    padding: 1rem;
+  }
+  .obudowa {
+    padding: 1rem;
+  }
+  .przyciski {
+    grid-template-columns: repeat(4, 70px);
+    gap: 1rem;
+    padding: 1.5rem;
+    font-size: 2rem;
+  }
+  .przyciski button:last-child {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  height: 3rem;
+}
+ #wynik {
+    height: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .przyciski {
+    grid-template-columns: repeat(4, 60px);
+    gap: 1rem;
+    padding: 1rem;
+    font-size: 1.8rem;
+  }
+  .przyciski button:last-child {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  height: 3rem;
+}
+  #wynik {
+    height: 4rem;
+  }
+}
